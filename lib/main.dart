@@ -68,21 +68,27 @@ class _MyAppState extends State<MyApp> {
                   onPressed: colorSpecified,
                   child: const Text('A', style: TextStyle(color: Colors.black)),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.white),
-                    overlayColor: MaterialStateProperty.all(Colors.yellow),
-                    padding:
-                        MaterialStateProperty.all(const EdgeInsets.all(40)),
-                  ),
+                      backgroundColor: MaterialStateProperty.all(Colors.white),
+                      overlayColor: MaterialStateProperty.all(Colors.yellow),
+                      padding: MaterialStateProperty.all(
+                          const EdgeInsets.fromLTRB(200, 30, 200, 30)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18.0),
+                      ))),
                 ),
                 ElevatedButton(
                   onPressed: colorSwitch,
                   child: const Text('B', style: TextStyle(color: Colors.black)),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.white),
-                    overlayColor: MaterialStateProperty.all(Colors.yellow),
-                    padding:
-                        MaterialStateProperty.all(const EdgeInsets.all(40)),
-                  ),
+                      backgroundColor: MaterialStateProperty.all(Colors.white),
+                      overlayColor: MaterialStateProperty.all(Colors.yellow),
+                      padding: MaterialStateProperty.all(
+                          const EdgeInsets.fromLTRB(200, 30, 200, 30)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18.0),
+                      ))),
                 ),
               ]),
               TextField(
