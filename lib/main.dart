@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
-//import 'package:color/color.dart';
+import 'package:color/color.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,19 +23,21 @@ class _MyAppState extends State<MyApp> {
     setState(() =>
         colorIs = Colors.primaries[Random().nextInt(Colors.primaries.length)]);
     selectA = false;
-    print('B');
   }
 
   void colorSpecified() {
     selectA = true;
-    print('A');
   }
 
   void debounceColorInput(String input) {
     if (_debounce?.isActive ?? false) _debounce?.cancel();
     _debounce = Timer(const Duration(milliseconds: 500), () {
       if (selectA) {
-        print(input);
+        var rgbVal = RgbColor.name(input);
+        int r = rgbVal.r.toInt();
+        int g = rgbVal.g.toInt();
+        int b = rgbVal.b.toInt();
+        colorIs = Color.fromRGBO(r, g, b, 1.0);
       }
     });
   }
